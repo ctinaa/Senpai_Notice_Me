@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">"Senpai Notice Me "</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="not_noticing"> He is not noticing me...</string>
+    <string name="check_noticed">Is he noticing me now?</string>
+
+</resources>
