@@ -6,5 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="not_noticing"> He is not noticing me...</string>
     <string name="check_noticed">Is he noticing me now?</string>
+    <string name="save_location_button">Save Location</string>
 
 </resources>
