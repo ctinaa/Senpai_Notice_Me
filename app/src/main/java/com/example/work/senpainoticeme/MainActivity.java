@@ -7,30 +7,67 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.support.v4.app.NotificationCompat;
+
+
 
 //event handling: events caused when pressing button
 // callback: text changing
 
 public class MainActivity extends ActionBarActivity {
 
-    // okay button listen do as soon activity created
-    @Override
+     //Notification
+    NotificationCompat.Builder notification;
+    private static final int uniqueID = 2304; // give id to each notif.
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button will_he_button = (Button)findViewById(R.id.will_he_button);
-     // event listener
+        notification = new NotificationCompat.Builder(this);
+        notification.setAutoCancel(true);
+        //whatever notif. on screen will delete action
+
+        // okay button listen do as soon activity created
+
+        Button will_he_button = (Button) findViewById(R.id.will_he_button);
+        // event listener
         will_he_button.setOnClickListener(
-            new Button.OnClickListener(){
-                public void onClick(View v){
-                    TextView Notice_me = (TextView)findViewById(R.id.Notice_me);
-                    Notice_me.setText("He notices me!");
+                new Button.OnClickListener()
+
+                {
+                    public void onClick (View v){
+                        TextView Notice_me = (TextView) findViewById(R.id.Notice_me);
+                        Notice_me.setText("He notices me!");
+                    }
                 }
-            }
+
         );
+
+
     }
 
+    public void save_button_clicked(View view) {
+        // build the notification
+        notification.setSmallIcon(R.drawable.ic_launcher);
+        notification.setTicker("This is the ticker");
+        notification.setWhen(System.currentTimeMillis());
+        notification.setContentTitle("Here is the title");
+        notification.setContentText("I am the body text of the notification");
+
+        Intent intent = new Intent(this, MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        notification.setContentIntent(pendingIntent);
+
+        // builds notification and issues (sending out to device) it
+
+        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        nm.notify(uniqueID, notification.build());
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

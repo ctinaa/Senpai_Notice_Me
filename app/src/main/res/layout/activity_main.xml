@@ -30,5 +30,6 @@
         android:text="@string/save_location_button"
         android:id="@+id/save_location"
         android:layout_below="@+id/will_he_button"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="save_button_clicked" />
 </RelativeLayout>
