@@ -10,20 +10,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/not_noticing"
+        android:text="He&apos;s not noticing"
         android:id="@+id/Notice_me"
-        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="138dp" />
+        android:onClick="addButtonClicked" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/check_noticed"
         android:id="@+id/will_he_button"
+        android:layout_marginTop="55dp"
         android:layout_below="@+id/Notice_me"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="112dp" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -34,7 +34,45 @@
         android:layout_centerHorizontal="true"
         android:onClick="save_button_clicked" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Dear "
+        android:id="@+id/Dearid"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/save_location"
+        android:layout_toStartOf="@+id/save_location"
+        android:layout_marginTop="45dp" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_alignBottom="@+id/Dearid"
+        android:layout_toRightOf="@+id/Dearid"
+        android:layout_toEndOf="@+id/Dearid" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add "
+        android:id="@+id/Dearnameid"
+        android:layout_below="@+id/editText"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="please notice me."
+        android:id="@+id/noticemetextid"
+        android:layout_below="@+id/Dearnameid"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
