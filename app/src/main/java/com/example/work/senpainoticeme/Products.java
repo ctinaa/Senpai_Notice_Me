@@ -15,6 +15,11 @@ public class Products {
         this._productname = productname;
     }
 
+    public void set_id(int _id)
+    {
+        this._id = _id;
+    }
+
     public void set_productname(String _productname) {
         this. _productname = _productname;
      }

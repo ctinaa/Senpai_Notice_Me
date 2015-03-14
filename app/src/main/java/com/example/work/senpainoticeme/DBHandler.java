@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.content.Context;
 import android.content.ContentValues;
 
+
 /**
  * Created by Work on 3/13/2015.
  */
@@ -38,7 +39,7 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
     // add a new row to the database
-    public void addProduct(Product product) {
+    public void addProduct(Products product) {
         ContentValues values = new ContentValues();
         values.put(COLUMNN_PRODUCTNAME, product.get_productname());
         // ContentValues: set values for col in one statement
@@ -62,8 +63,13 @@ public class DBHandler extends SQLiteOpenHelper {
         c.moveToFirst();
 
         while(!c.isAfterLast()){
-
+            if(c.getString(c.getColumnIndex("productname"))!=null){
+                dbString += c.getString(c.getColumnIndex("productname"));
+                dbString += "\n";
+            }
         }
+        db.close();
+        return dbString;
     }
 
 }

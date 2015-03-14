@@ -5,20 +5,22 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
-import android.view.View.OnClickListener;
-import android.app.Activity;
+import android.widget.EditText;
 
 
 //event handling: events caused when pressing button
 // callback: text changing
 
 public class MainActivity extends ActionBarActivity {
+    EditText senpai_id;
+    TextView Textname;
+    DBHandler dbHandler;
+
 
     //Notification
     NotificationCompat.Builder notification;
@@ -31,6 +33,32 @@ public class MainActivity extends ActionBarActivity {
         notification = new NotificationCompat.Builder(this);
         notification.setAutoCancel(true);
         //whatever notif. on screen will delete action
+
+        /* For the input and text */
+        senpai_id = (EditText) findViewById(R.id.senpai_id);
+        Textname = (TextView) findViewById(R.id.Textname);
+        dbHandler = new DBHandler(this, null, null, 1);
+        printDatabase();
+     }
+
+    // adds product to database - only accepts a product object
+
+    public void addButtonClicked(View view)
+    {
+        Products product = new Products(senpai_id.getText().toString());
+        dbHandler.addProduct(product);
+        printDatabase();
+    }
+
+    public void deleteButtonClicked(View view){
+        String inputText = senpai_id.getText().toString();
+        dbHandler.deleteProduct(inputText);
+        printDatabase();
+    }
+    public void printDatabase(){
+        String dbString = dbHandler.databaseToString();
+        Textname.setText(dbString);
+        senpai_id.setText("");
     }
 
     public void save_button_clicked(View view) {
@@ -81,4 +109,6 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
