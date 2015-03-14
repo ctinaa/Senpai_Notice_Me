@@ -29,28 +29,27 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+              /* For the input and text */
+        senpai_id = (EditText) findViewById(R.id.senpai_id);
+        Textname = (TextView) findViewById(R.id.Textname);
+        dbHandler = new DBHandler(this, null, null, 1);
+        printDatabase();
 
         notification = new NotificationCompat.Builder(this);
         notification.setAutoCancel(true);
         //whatever notif. on screen will delete action
 
-        /* For the input and text */
-        senpai_id = (EditText) findViewById(R.id.senpai_id);
-        Textname = (TextView) findViewById(R.id.Textname);
-        dbHandler = new DBHandler(this, null, null, 1);
-        printDatabase();
+
      }
 
     // adds product to database - only accepts a product object
 
-    public void addButtonClicked(View view)
-    {
+    public void addButtonClicked(View view){
         Products product = new Products(senpai_id.getText().toString());
         dbHandler.addProduct(product);
         printDatabase();
     }
-
-    public void deleteButtonClicked(View view){
+     public void deleteButtonClicked(View view){
         String inputText = senpai_id.getText().toString();
         dbHandler.deleteProduct(inputText);
         printDatabase();
@@ -60,6 +59,7 @@ public class MainActivity extends ActionBarActivity {
         Textname.setText(dbString);
         senpai_id.setText("");
     }
+
 
     public void save_button_clicked(View view) {
         // build the notification
