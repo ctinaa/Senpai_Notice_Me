@@ -4,7 +4,8 @@
 
     <meta-data
         android:name="com.google.android.maps.v2.API_KEY"
-        android:value="AIzaSyAetX3ftqEzhDKfivyEIyUATKww10Z0ElM"/>
+        android:value="AIzaSyAetX3ftqEzhDKfivyEIyUATKww10Z0ElM" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -19,8 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<meta-data android:name="com.google.android.gms.version"-->
-            <!--android:value="@integer/google_play_services_version" />-->
+        <!-- <meta-data android:name="com.google.android.gms.version" -->
+        <!-- android:value="@integer/google_play_services_version" /> -->
+        <activity
+            android:name=".SenpaiCalendar"
+            android:label="@string/title_activity_senpai_calendar" >
+        </activity>
     </application>
 
 </manifest>

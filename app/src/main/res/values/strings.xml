@@ -7,10 +7,11 @@
     <string name="not_noticing"> He is not noticing me...</string>
     <string name="check_noticed">Is he noticing me now?</string>
     <string name="save_location_button">Save Location</string>
-    <string name="addbutton">Add</string>
+    <string name="addButton">Add</string>
     <string name="noticetext">please notice me.</string>
     <string name="textinsert">Name</string>
     <string name="dear">Dear</string>
     <string name="henotices">He\'s not noticing</string>
+    <string name="title_activity_senpai_calendar">SenpaiCalendar</string>
 
 </resources>

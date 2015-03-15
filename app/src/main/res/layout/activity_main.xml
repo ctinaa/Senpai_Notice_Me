@@ -60,11 +60,12 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="add"
+        android:text="Add"
         android:id="@+id/addButton"
         android:layout_below="@+id/Dear_id"
         android:layout_alignLeft="@+id/Notice_me"
-        android:layout_alignStart="@+id/Notice_me" />
+        android:layout_alignStart="@+id/Notice_me"
+        android:onClick="addButtonClicked" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -85,10 +86,10 @@
         android:text="Large Text" />
 
     <Button
+        android:text="Delete"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Delete"
         android:id="@+id/deleteButton"
         android:onClick="deleteButtonClicked"
         android:layout_below="@+id/senpai_id"

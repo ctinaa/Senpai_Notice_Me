@@ -38,9 +38,7 @@ public class MainActivity extends ActionBarActivity {
         notification = new NotificationCompat.Builder(this);
         notification.setAutoCancel(true);
         //whatever notif. on screen will delete action
-
-
-     }
+    }
 
     // adds product to database - only accepts a product object
 
