@@ -4,9 +4,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.work.senpainoticeme.SenpaiCalendar">
+    tools:context="com.example.work.senpainoticeme.SenpaiCalendar"
+    android:id="@+id/">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <CalendarView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/calendarView"
+        android:layout_alignTop="@+id/calendarView"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
